@@ -4,5 +4,5 @@
 
 To extract the trace: 
 ```
-bril2json < benchmark/*.bril | brili | python trace.py
+bril2json < benchmark/*.bril | brili | python trace.py > *.json
 ```

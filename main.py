@@ -24,6 +24,11 @@ def main(args):
             line = json.loads(line)
             lines.append(line)
         print(json.dumps(lines, indent=2))
+    # read source file
+    src = args.src
+    # need to convert from bril to json first
+    assert src is not None, "need to specify source file"
+    
 
 def main_old(args):
     # get options
@@ -63,18 +68,18 @@ def main_old(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('-from-ssa', dest='from_ssa',
-                        default=False, action='store_true',
-                        help='Convert SSA-form program to original')
-    parser.add_argument('-to-ssa', dest='to_ssa',
-                        default=False, action='store_true',
-                        help='Convert program to SSA form')
-    parser.add_argument('-roundtrip', dest='roundtrip',
-                        default=False, action='store_true',
-                        help='Convert program to SSA form then convert it back')
-    parser.add_argument('-visualize', dest='visualize',
-                        default=False, action='store_true',
-                        help='visualize results')
+    # parser.add_argument('-from-ssa', dest='from_ssa',
+    #                     default=False, action='store_true',
+    #                     help='Convert SSA-form program to original')
+    # parser.add_argument('-to-ssa', dest='to_ssa',
+    #                     default=False, action='store_true',
+    #                     help='Convert program to SSA form')
+    # parser.add_argument('-roundtrip', dest='roundtrip',
+    #                     default=False, action='store_true',
+    #                     help='Convert program to SSA form then convert it back')
+    # parser.add_argument('-visualize', dest='visualize',
+    #                     default=False, action='store_true',
+    #                     help='visualize results')
     parser.add_argument('-f', dest='filename', 
                         action='store', type=str, help='json file')
     parser.add_argument("-src", dest='src',
