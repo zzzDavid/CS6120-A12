@@ -3,12 +3,6 @@ import json
 import copy
 import sys
 
-from basic_block import form_basic_blocks
-from control_flow_graph import *
-from visualizer import CFGVisualizer, DomTreeVisualizer
-from to_ssa import cfg_to_ssa
-from from_ssa import cfg_from_ssa
-
 """
 This function binds the function call arguments and return value.
 The goal is to output a straight-line program that can be executed
