@@ -1,0 +1,2153 @@
+{
+  "functions": [
+    {
+      "name": "main",
+      "instrs": [
+        {
+          "args": [
+            "n",
+            "arrows",
+            "repeats"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "new_arrows",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "args": [
+            "num",
+            "new_arrows",
+            "ans"
+          ],
+          "dest": "ans",
+          "funcs": [
+            "up_arrow"
+          ],
+          "op": "call",
+          "type": "int"
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "num"
+          ],
+          "dest": "ans",
+          "op": "id",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "arrows",
+            "one"
+          ],
+          "dest": "base_case",
+          "op": "le",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "base_case"
+          ],
+          "labels": [
+            "base",
+            "arrowsgreaterthan1"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans",
+            "num"
+          ],
+          "dest": "ans",
+          "op": "mul",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "finally"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "loopstart"
+          ],
+          "op": "jmp"
+        },
+        {
+          "args": [
+            "i",
+            "repeats"
+          ],
+          "dest": "keepgoing",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "keepgoing"
+          ],
+          "labels": [
+            "loopbody",
+            "endloop"
+          ],
+          "op": "br"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "ret"
+        },
+        {
+          "args": [
+            "ans"
+          ],
+          "op": "print"
+        }
+      ]
+    }
+  ]
+}

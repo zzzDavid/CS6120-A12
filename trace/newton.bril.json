@@ -1,0 +1,260 @@
+{
+  "functions": [
+    {
+      "instrs": [
+        {
+          "dest": "n",
+          "op": "const",
+          "type": "float",
+          "value": 99999
+        },
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "float",
+          "value": 2
+        },
+        {
+          "args": [
+            "n",
+            "two"
+          ],
+          "dest": "x",
+          "op": "fdiv",
+          "type": "float"
+        },
+        {
+          "args": [
+            "n"
+          ],
+          "dest": "prev_x",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "dest": "target",
+          "op": "const",
+          "type": "float",
+          "value": 1e-05
+        },
+        {
+          "label": "for.cond.1"
+        },
+        {
+          "args": [
+            "prev_x",
+            "x"
+          ],
+          "dest": "d",
+          "funcs": [
+            "diff"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "d",
+            "target"
+          ],
+          "dest": "v6",
+          "op": "fgt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v6"
+          ],
+          "labels": [
+            "for.body.1",
+            "for.end.1"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "for.body.1"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "dest": "prev_x",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "x",
+            "n"
+          ],
+          "dest": "x",
+          "funcs": [
+            "sqrt"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "labels": [
+            "for.cond.1"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "for.end.1"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "n",
+          "type": "float"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "two",
+          "op": "const",
+          "type": "float",
+          "value": 2
+        },
+        {
+          "args": [
+            "x",
+            "x"
+          ],
+          "dest": "v0",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v0",
+            "n"
+          ],
+          "dest": "v1",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "two",
+            "x"
+          ],
+          "dest": "v2",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v1",
+            "v2"
+          ],
+          "dest": "v3",
+          "op": "fdiv",
+          "type": "float"
+        },
+        {
+          "args": [
+            "x",
+            "v3"
+          ],
+          "dest": "v4",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v4"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "sqrt",
+      "type": "float"
+    },
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "float"
+        },
+        {
+          "name": "b",
+          "type": "float"
+        }
+      ],
+      "instrs": [
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "c",
+          "op": "fgt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "c"
+          ],
+          "labels": [
+            "then.1",
+            "else.1"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "then.1"
+        },
+        {
+          "args": [
+            "a",
+            "b"
+          ],
+          "dest": "v5",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "op": "ret"
+        },
+        {
+          "label": "else.1"
+        },
+        {
+          "args": [
+            "b",
+            "a"
+          ],
+          "dest": "v5",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "diff",
+      "type": "float"
+    }
+  ]
+}

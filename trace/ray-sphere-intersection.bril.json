@@ -1,0 +1,957 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "rayOriginX",
+          "type": "float"
+        },
+        {
+          "name": "rayOriginY",
+          "type": "float"
+        },
+        {
+          "name": "rayOriginZ",
+          "type": "float"
+        },
+        {
+          "name": "rayDirectionX",
+          "type": "float"
+        },
+        {
+          "name": "rayDirectionY",
+          "type": "float"
+        },
+        {
+          "name": "rayDirectionZ",
+          "type": "float"
+        },
+        {
+          "name": "circleCenterX",
+          "type": "float"
+        },
+        {
+          "name": "circleCenterY",
+          "type": "float"
+        },
+        {
+          "name": "circleCenterZ",
+          "type": "float"
+        },
+        {
+          "name": "radius",
+          "type": "float"
+        }
+      ],
+      "instrs": [
+        {
+          "args": [
+            "rayOriginX"
+          ],
+          "dest": "v0",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterX"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v0",
+            "v1"
+          ],
+          "dest": "v2",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v2"
+          ],
+          "dest": "OC_x",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayOriginY"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterY"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v3",
+            "v4"
+          ],
+          "dest": "v5",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "dest": "OC_y",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayOriginZ"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterZ"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v6",
+            "v7"
+          ],
+          "dest": "v8",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v8"
+          ],
+          "dest": "OC_z",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionX"
+          ],
+          "dest": "v9",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionY"
+          ],
+          "dest": "v10",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionZ"
+          ],
+          "dest": "v11",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionX"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionY"
+          ],
+          "dest": "v13",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionZ"
+          ],
+          "dest": "v14",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v9",
+            "v10",
+            "v11",
+            "v12",
+            "v13",
+            "v14"
+          ],
+          "dest": "a",
+          "funcs": [
+            "DotProduct"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "a",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_x"
+          ],
+          "dest": "v15",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_y"
+          ],
+          "dest": "v16",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_z"
+          ],
+          "dest": "v17",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionX"
+          ],
+          "dest": "v18",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionY"
+          ],
+          "dest": "v19",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionZ"
+          ],
+          "dest": "v20",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v15",
+            "v16",
+            "v17",
+            "v18",
+            "v19",
+            "v20"
+          ],
+          "dest": "bInitial",
+          "funcs": [
+            "DotProduct"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "bInitial"
+          ],
+          "dest": "bInitial",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "dest": "v21",
+          "op": "const",
+          "type": "float",
+          "value": 2
+        },
+        {
+          "args": [
+            "bInitial"
+          ],
+          "dest": "v22",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v21",
+            "v22"
+          ],
+          "dest": "v23",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v23"
+          ],
+          "dest": "b",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_x"
+          ],
+          "dest": "v24",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_y"
+          ],
+          "dest": "v25",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_z"
+          ],
+          "dest": "v26",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_x"
+          ],
+          "dest": "v27",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_y"
+          ],
+          "dest": "v28",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "OC_z"
+          ],
+          "dest": "v29",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v24",
+            "v25",
+            "v26",
+            "v27",
+            "v28",
+            "v29"
+          ],
+          "dest": "cInitial",
+          "funcs": [
+            "DotProduct"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "cInitial"
+          ],
+          "dest": "cInitial",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "radius"
+          ],
+          "dest": "v30",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "radius"
+          ],
+          "dest": "v31",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v30",
+            "v31"
+          ],
+          "dest": "v32",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v32"
+          ],
+          "dest": "radiusSquared",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "cInitial"
+          ],
+          "dest": "v33",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "radiusSquared"
+          ],
+          "dest": "v34",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v33",
+            "v34"
+          ],
+          "dest": "v35",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v35"
+          ],
+          "dest": "c",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v36",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v37",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v36",
+            "v37"
+          ],
+          "dest": "v38",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v38"
+          ],
+          "dest": "discriminant1",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "dest": "v39",
+          "op": "const",
+          "type": "float",
+          "value": 4
+        },
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v40",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v39",
+            "v40"
+          ],
+          "dest": "v41",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "c"
+          ],
+          "dest": "v42",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v41",
+            "v42"
+          ],
+          "dest": "v43",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v43"
+          ],
+          "dest": "discriminant2",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "discriminant1"
+          ],
+          "dest": "v44",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "discriminant2"
+          ],
+          "dest": "v45",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v44",
+            "v45"
+          ],
+          "dest": "v46",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v46"
+          ],
+          "dest": "discriminant",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "discriminant"
+          ],
+          "dest": "v47",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "dest": "v48",
+          "op": "const",
+          "type": "float",
+          "value": 0
+        },
+        {
+          "args": [
+            "v47",
+            "v48"
+          ],
+          "dest": "v49",
+          "op": "fgt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "v49"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "RaySphereIntersection",
+      "type": "bool"
+    },
+    {
+      "args": [
+        {
+          "name": "a",
+          "type": "float"
+        },
+        {
+          "name": "b",
+          "type": "float"
+        },
+        {
+          "name": "c",
+          "type": "float"
+        },
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "y",
+          "type": "float"
+        },
+        {
+          "name": "z",
+          "type": "float"
+        }
+      ],
+      "instrs": [
+        {
+          "args": [
+            "a"
+          ],
+          "dest": "v0",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "x"
+          ],
+          "dest": "v1",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v0",
+            "v1"
+          ],
+          "dest": "v2",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v2"
+          ],
+          "dest": "A",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "dest": "v3",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "y"
+          ],
+          "dest": "v4",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v3",
+            "v4"
+          ],
+          "dest": "v5",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v5"
+          ],
+          "dest": "B",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "c"
+          ],
+          "dest": "v6",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "z"
+          ],
+          "dest": "v7",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v6",
+            "v7"
+          ],
+          "dest": "v8",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v8"
+          ],
+          "dest": "C",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "A"
+          ],
+          "dest": "v9",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "B"
+          ],
+          "dest": "v10",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v9",
+            "v10"
+          ],
+          "dest": "v11",
+          "op": "fadd",
+          "type": "float"
+        },
+        {
+          "args": [
+            "C"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v11",
+            "v12"
+          ],
+          "dest": "v13",
+          "op": "fadd",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v13"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "DotProduct",
+      "type": "float"
+    },
+    {
+      "instrs": [
+        {
+          "dest": "rayOriginX",
+          "op": "const",
+          "type": "float",
+          "value": 0.0
+        },
+        {
+          "dest": "rayOriginY",
+          "op": "const",
+          "type": "float",
+          "value": 0.0
+        },
+        {
+          "dest": "rayOriginZ",
+          "op": "const",
+          "type": "float",
+          "value": 0.0
+        },
+        {
+          "dest": "rayDirectionX",
+          "op": "const",
+          "type": "float",
+          "value": 0.33
+        },
+        {
+          "dest": "rayDirectionY",
+          "op": "const",
+          "type": "float",
+          "value": 0.33
+        },
+        {
+          "dest": "rayDirectionZ",
+          "op": "const",
+          "type": "float",
+          "value": 0.33
+        },
+        {
+          "dest": "circleCenterX",
+          "op": "const",
+          "type": "float",
+          "value": 5.0
+        },
+        {
+          "dest": "circleCenterY",
+          "op": "const",
+          "type": "float",
+          "value": 5.0
+        },
+        {
+          "dest": "circleCenterZ",
+          "op": "const",
+          "type": "float",
+          "value": 5.0
+        },
+        {
+          "dest": "radius",
+          "op": "const",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "args": [
+            "rayOriginX"
+          ],
+          "dest": "v10",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayOriginY"
+          ],
+          "dest": "v11",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayOriginZ"
+          ],
+          "dest": "v12",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionX"
+          ],
+          "dest": "v13",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionY"
+          ],
+          "dest": "v14",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "rayDirectionZ"
+          ],
+          "dest": "v15",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterX"
+          ],
+          "dest": "v16",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterY"
+          ],
+          "dest": "v17",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "circleCenterZ"
+          ],
+          "dest": "v18",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "radius"
+          ],
+          "dest": "v19",
+          "op": "id",
+          "type": "float"
+        },
+        {
+          "args": [
+            "v10",
+            "v11",
+            "v12",
+            "v13",
+            "v14",
+            "v15",
+            "v16",
+            "v17",
+            "v18",
+            "v19"
+          ],
+          "dest": "intersected",
+          "funcs": [
+            "RaySphereIntersection"
+          ],
+          "op": "call",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "intersected"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}

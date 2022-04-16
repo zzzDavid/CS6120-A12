@@ -1,1 +1,18 @@
-total_dyn_inst: 146
+Traceback (most recent call last):
+  File "../main.py", line 76, in <module>
+    main(args)
+  File "../main.py", line 64, in main
+    straight_prog = bind_func_args(prog, trace)
+  File "../main.py", line 15, in bind_func_args
+    trace['functions'][0]['args'] = func['args']
+KeyError: 'args'
+/Users/zhangniansong/Developer/bril/bril-ts/build/brili.js:847
+process.on('unhandledRejection', e => { throw e; });
+                                        ^
+
+SyntaxError: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at /Users/zhangniansong/Developer/bril/bril-ts/build/brili.js:832:29
+    at Generator.next (<anonymous>)
+    at fulfilled (/Users/zhangniansong/Developer/bril/bril-ts/build/brili.js:6:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)

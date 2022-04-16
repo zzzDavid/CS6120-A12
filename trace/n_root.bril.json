@@ -1,0 +1,295 @@
+{
+  "functions": [
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "k",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "xx",
+          "op": "const",
+          "type": "float",
+          "value": 1.0
+        },
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "label": "while"
+        },
+        {
+          "args": [
+            "i",
+            "k"
+          ],
+          "dest": "b",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "labels": [
+            "continue",
+            "endwhile"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "continue"
+        },
+        {
+          "args": [
+            "xx",
+            "x"
+          ],
+          "dest": "xx",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "while"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "endwhile"
+        },
+        {
+          "args": [
+            "xx"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "pow",
+      "type": "float"
+    },
+    {
+      "args": [
+        {
+          "name": "x",
+          "type": "float"
+        },
+        {
+          "name": "n",
+          "type": "int"
+        }
+      ],
+      "instrs": [
+        {
+          "dest": "one",
+          "op": "const",
+          "type": "int",
+          "value": 1
+        },
+        {
+          "dest": "two_f",
+          "op": "const",
+          "type": "float",
+          "value": 2.0
+        },
+        {
+          "args": [
+            "x",
+            "two_f"
+          ],
+          "dest": "xxx",
+          "op": "fdiv",
+          "type": "float"
+        },
+        {
+          "args": [
+            "n",
+            "one"
+          ],
+          "dest": "n_minus_one",
+          "op": "sub",
+          "type": "int"
+        },
+        {
+          "dest": "i",
+          "op": "const",
+          "type": "int",
+          "value": 0
+        },
+        {
+          "dest": "num_iter",
+          "op": "const",
+          "type": "int",
+          "value": 20
+        },
+        {
+          "label": "while"
+        },
+        {
+          "args": [
+            "i",
+            "num_iter"
+          ],
+          "dest": "b",
+          "op": "lt",
+          "type": "bool"
+        },
+        {
+          "args": [
+            "b"
+          ],
+          "labels": [
+            "continue",
+            "endwhile"
+          ],
+          "op": "br"
+        },
+        {
+          "label": "continue"
+        },
+        {
+          "args": [
+            "xxx",
+            "n_minus_one"
+          ],
+          "dest": "pow_n_minus_one",
+          "funcs": [
+            "pow"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "pow_n_minus_one",
+            "xxx"
+          ],
+          "dest": "pow_n",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "pow_n",
+            "x"
+          ],
+          "dest": "numerator",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "x",
+            "pow_n_minus_one"
+          ],
+          "dest": "denominator",
+          "op": "fmul",
+          "type": "float"
+        },
+        {
+          "args": [
+            "numerator",
+            "denominator"
+          ],
+          "dest": "frac",
+          "op": "fdiv",
+          "type": "float"
+        },
+        {
+          "args": [
+            "xxx",
+            "frac"
+          ],
+          "dest": "xxx",
+          "op": "fsub",
+          "type": "float"
+        },
+        {
+          "args": [
+            "i",
+            "one"
+          ],
+          "dest": "i",
+          "op": "add",
+          "type": "int"
+        },
+        {
+          "labels": [
+            "while"
+          ],
+          "op": "jmp"
+        },
+        {
+          "label": "endwhile"
+        },
+        {
+          "args": [
+            "xxx"
+          ],
+          "op": "ret"
+        }
+      ],
+      "name": "n_root",
+      "type": "float"
+    },
+    {
+      "instrs": [
+        {
+          "dest": "x",
+          "op": "const",
+          "type": "float",
+          "value": 8.0
+        },
+        {
+          "dest": "n",
+          "op": "const",
+          "type": "int",
+          "value": 5
+        },
+        {
+          "args": [
+            "x",
+            "n"
+          ],
+          "dest": "result",
+          "funcs": [
+            "n_root"
+          ],
+          "op": "call",
+          "type": "float"
+        },
+        {
+          "args": [
+            "result"
+          ],
+          "op": "print"
+        }
+      ],
+      "name": "main"
+    }
+  ]
+}
