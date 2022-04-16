@@ -17,6 +17,8 @@ def bind_func_args(prog, trace):
     # while iterating over them
     ret_stack = list()
     new_instrs = list()
+    # add speculate instruction
+    new_instrs.append({"op" : "speculate"})
     for instr in trace['functions'][0]['instrs']:
         if instr['op'] == 'call':
             # find the function that is being called
@@ -49,12 +51,28 @@ def bind_func_args(prog, trace):
                     "type" : ret_val['type']
                 }
                 new_instrs.append(id_instr)
+        elif instr['op'] == 'br':
+            import ipdb; ipdb.set_trace()
+            # turn br to guard
+            dest = instr['labels'][1]
+            cond = instr['args']
+            guard_instr = {
+                "op": "guard",
+                "args" : cond,
+                "labels" : [dest]
+            }
+            new_instrs.append(guard_instr)
         else:
-            if instr['op'] not in ['jmp', 'br']:
+            if instr['op'] not in ['jmp']:
                 new_instrs.append(instr)
+    # add commit instruction
+    new_instrs.append({"op" : "commit"})
     trace['functions'][0]['instrs'] = new_instrs
     return trace
         
+
+def insert_trace(prog, trace):
+    pass
 
 def main(args):
     with open(args.src, 'r') as f:
