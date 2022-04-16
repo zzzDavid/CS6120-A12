@@ -77,5 +77,7 @@ if __name__ == "__main__":
                         help='visualize results')
     parser.add_argument('-f', dest='filename', 
                         action='store', type=str, help='json file')
+    parser.add_argument("-src", dest='src',
+                        action='store', type=str, help="bril source file")
     args = parser.parse_args()
     main(args)
