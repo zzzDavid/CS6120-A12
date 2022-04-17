@@ -1,0 +1,3 @@
+command = "bril2json < {filename} > ../trace/{filename}.json && bril2json < {filename} | brili {args} | python ../trace.py > ../trace/{filename}.trace && python ../main.py -src ../trace/{filename}.json -trace ../trace/{filename}.trace | brili -p {args} | python ../filter.py"
+output.out = "-"
+output.prof = "2"
