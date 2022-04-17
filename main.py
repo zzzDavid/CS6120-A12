@@ -13,6 +13,7 @@ def bind_func_args(prog, trace):
     for func in prog['functions']:
         if func['name'] == 'main':
             trace['functions'][0]['args'] = func['args']
+            main_labels = [instr["label"] for instr in func["instrs"] if "label" in instr]
     # we need to be careful not to modify instructions
     # while iterating over them
     ret_stack = list()
@@ -52,7 +53,6 @@ def bind_func_args(prog, trace):
                 }
                 new_instrs.append(id_instr)
         elif instr['op'] == 'br':
-            import ipdb; ipdb.set_trace()
             # turn br to guard
             dest = instr['labels'][1]
             cond = instr['args']
@@ -61,7 +61,8 @@ def bind_func_args(prog, trace):
                 "args" : cond,
                 "labels" : [dest]
             }
-            new_instrs.append(guard_instr)
+            if dest in main_labels:
+                new_instrs.append(guard_instr)
         else:
             if instr['op'] not in ['jmp']:
                 new_instrs.append(instr)
@@ -72,7 +73,20 @@ def bind_func_args(prog, trace):
         
 
 def insert_trace(prog, trace):
-    pass
+    new_instrs = list()
+    new_instrs.extend(trace['functions'][0]['instrs'])
+    # add a ret instr for the main function
+    if new_instrs[-1]['op'] != 'ret':
+        new_instrs.append({"op" : "ret"})
+    new_instrs.append({"label" : "main_entry"})
+
+    for func in prog['functions']:
+        if func['name'] == 'main':
+            new_instrs.extend(func['instrs'])
+            # replace the main function's instructions
+            func['instrs'] = new_instrs
+            break
+    return prog
 
 def main(args):
     with open(args.src, 'r') as f:
@@ -80,7 +94,8 @@ def main(args):
     with open(args.trace, 'r') as f:
         trace = json.load(f)
     straight_prog = bind_func_args(prog, trace)
-    print(json.dumps(straight_prog, indent=2))
+    new_prog = insert_trace(prog, straight_prog)
+    print(json.dumps(new_prog, indent=2))
 
 
 
