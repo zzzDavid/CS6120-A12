@@ -1,3 +1,0 @@
-command = "bril2json < {filename} | brili -p {args} | python ../filter.py"
-output.out = "-"
-output.prof = "2"
