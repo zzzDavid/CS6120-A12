@@ -38,4 +38,5 @@
   br done .finish .outer_loop;
 
 .finish:
+  ret;
 }

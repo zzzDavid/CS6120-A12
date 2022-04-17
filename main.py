@@ -12,7 +12,8 @@ def bind_func_args(prog, trace):
     # copy the main functions's input argument to trace
     for func in prog['functions']:
         if func['name'] == 'main':
-            trace['functions'][0]['args'] = func['args']
+            if 'args' in func:
+                trace['functions'][0]['args'] = func['args']
             main_labels = [instr["label"] for instr in func["instrs"] if "label" in instr]
     # we need to be careful not to modify instructions
     # while iterating over them
@@ -62,26 +63,29 @@ def bind_func_args(prog, trace):
             if index+1 < len(trace['functions'][0]['instrs']):
                 next_instr = trace['functions'][0]['instrs'][index+1]
                 label0 = instr['labels'][0]
-                jmp0 = False
+                takeTrue = False
                 # find the label that is being jumped to
-                # for func in prog['functions']:
-                #     for idx, ii in enumerate(func['instrs']):
-                #         if 'label' in ii and ii['label'] == label0:
-                #             if func['instrs'][idx+1] == next_instr:
-                #                 jmp0 = True
-                #                 break
+                for func in prog['functions']:
+                    for idx, ii in enumerate(func['instrs']):
+                        if 'label' in ii and ii['label'] == label0:
+                            if idx + 1 > len(func['instrs']):
+                                takeTrue = True
+                                break
+                            if func['instrs'][idx+1] == next_instr:
+                                takeTrue = True
+                                break
             else:
-                jmp0 = False
-            if jmp0:
+                takeTrue = True
+            if takeTrue:
                 # if we are guarding cond, jump to label1
                 cond = instr['args']
                 dest = instr['labels'][1]
             else:
                 # if we are guarding not cond, jump to label0
-                # cond_not_op = {"op" : "not", "args" : instr['args'], "type" : "bool", "dest" : "not_cond"}
-                # new_instrs.append(cond_not_op)
-                # cond = ['not_cond']
-                cond = instr['args']
+                cond_not_op = {"op" : "not", "args" : instr['args'], "type" : "bool", "dest" : "not_cond"}
+                new_instrs.append(cond_not_op)
+                cond = ['not_cond']
+                # cond = instr['args']
                 dest = instr['labels'][0]
             guard_instr = {
                 "op": "guard",
@@ -89,9 +93,7 @@ def bind_func_args(prog, trace):
                 "labels" : [dest]
             }
             if dest in main_labels:
-                pass
-                # new_instrs.append({'op' : "print", 'args' : cond})
-                # new_instrs.append(guard_instr)
+                new_instrs.append(guard_instr)
         else:
             if instr['op'] not in ['jmp']:
                 new_instrs.append(instr)

@@ -29,6 +29,7 @@
   i: int = id v15;
   jmp .for.cond.1;
 .for.end.1:
+  ret;
 }
 
 @checkPrime(x: int): bool {
